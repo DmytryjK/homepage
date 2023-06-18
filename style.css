@@ -158,6 +158,7 @@ body {
 }
 
 .contact-info__avatar {
+    max-width: 100%;
     height: 400px;
     object-fit: cover;
     border: 3px solid;
@@ -361,4 +362,25 @@ body {
 
 .additional-info__languages-item {
     color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 767px) {
+    .contact-info__content-wrapper {
+        flex-wrap: wrap;
+        gap: 30px;
+    }    
+    .skills__content-wrapper {
+        gap: 25px;
+    }
+    .skills__info-wrapper {
+        flex-basis: 100%;
+    }
+    .skills__subtitle {
+        text-align: left;
+    }
+    .skills-soft__list-wrapper {
+        justify-content: start;
+        gap: 20%;
+        flex-wrap: wrap;
+    }
 }
