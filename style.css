@@ -306,6 +306,45 @@ body {
     color: var(--secondary-text-color);
 }
 
+.additional-info__courses-item {
+    padding-left: 15px;
+    list-style-type: none;
+    position: relative;
+}
+
+.additional-info__courses-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color:var(--text-decoration-color);;
+    border-radius: 50%;
+    
+}
+
+.additional-info__courses-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info__courses-item:not(:first-child) {
+    margin-top: 10px;
+}
+
+.additional-info__education-courses-durability {
+    color: var(--durability-text-color);
+    text-align: left;
+    font-size: 15px;
+}
+
+.additional-info__education-courses-speciality {
+    color: var(--primary-text-color);
+    text-align: left;
+}
+
 .additional-info__languages {
     margin-bottom: 20px;
 }
