@@ -34,6 +34,18 @@ body {
     justify-content: space-between;
 }
 
+.mgt30 {
+    margin-top: 30px;
+}
+
+.penone {
+    pointer-events: none;
+}
+
+.txt-center {
+    text-align: center;
+}
+
 .resume {
     margin: 50px auto;
     border: 1px solid #f5f5f5;
@@ -50,13 +62,8 @@ body {
 
 @media screen and (max-width: 576px) {
 
-    .main-info,
-    .contact_info_container {
+    .main-info {
         flex-direction: column;
-    }
-
-    .contact_info_container {
-        align-items: center;
     }
 
     .contact-info__block:not(:last-child) {
@@ -85,14 +92,26 @@ body {
     margin-bottom: 30px;
 }
 
-.contact-info__block {
+.contact-info__content-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 100px;
+}
+
+.contact-info__block {
+    padding-top: 20px;
 }
 
 .contact-info__block--center {
     justify-content: center;
+}
+
+.contact-info__title {
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-color: var(--text-decoration-color);
 }
 
 .contact-info__item {
@@ -100,6 +119,17 @@ body {
     text-decoration: none;
     display: flex;
     justify-content: start;
+    align-items: center;
+}
+
+.contact-info__item:hover span {
+    color: var(--text-decoration-color);
+    transition: 0.2s ease-out color;
+}
+
+.contact-info__item:hover .contact-info__item-icon path {
+    fill: var(--text-decoration-color);
+    transition: 0.2s ease-out fill;
 }
 
 .contact-info__item:not(:last-child) {
@@ -113,8 +143,13 @@ body {
     justify-content: center;
 }
 
+.contact-info__item span {
+    transition: 0.2s ease-out color;
+}
+
 .contact-info__item-icon path {
     fill: var(--icon-color);
+    transition: 0.2s ease-out fill;
 }
 
 .contact-info__item-icon {
@@ -123,12 +158,11 @@ body {
 }
 
 .contact-info__avatar {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    max-width: 100%;
+    height: 400px;
     object-fit: cover;
     border: 3px solid;
-    border-color: var(--text-decoration-color);
+    border-color: var(--text-decoration-color); 
 }
 
 .intro {
@@ -166,6 +200,31 @@ body {
 .skills__text {
     color: var(--secondary-text-color);
     text-align: justify;
+}
+
+.skills__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.skills__info-wrapper {
+    flex-basis: 45%;
+}
+
+.skills-soft__list-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.skills__item {
+    list-style-position: inside;
+}
+
+.skills__item::marker {
+    color: var(--text-decoration-color);
 }
 
 .experiences {
@@ -217,6 +276,10 @@ body {
     padding-left: 20px;
 }
 
+.experiences__company-project-responsibilities li::marker {
+    color: var(--text-decoration-color);
+}
+
 .additional-info {
     flex: 1 1 40%;
 }
@@ -248,6 +311,45 @@ body {
     color: var(--secondary-text-color);
 }
 
+.additional-info__courses-item {
+    padding-left: 15px;
+    list-style-type: none;
+    position: relative;
+}
+
+.additional-info__courses-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color:var(--text-decoration-color);;
+    border-radius: 50%;
+    
+}
+
+.additional-info__courses-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info__courses-item:not(:first-child) {
+    margin-top: 10px;
+}
+
+.additional-info__education-courses-durability {
+    color: var(--durability-text-color);
+    text-align: left;
+    font-size: 15px;
+}
+
+.additional-info__education-courses-speciality {
+    color: var(--primary-text-color);
+    text-align: left;
+}
+
 .additional-info__languages {
     margin-bottom: 20px;
 }
@@ -260,4 +362,25 @@ body {
 
 .additional-info__languages-item {
     color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 767px) {
+    .contact-info__content-wrapper {
+        flex-wrap: wrap;
+        gap: 30px;
+    }    
+    .skills__content-wrapper {
+        gap: 25px;
+    }
+    .skills__info-wrapper {
+        flex-basis: 100%;
+    }
+    .skills__subtitle {
+        text-align: left;
+    }
+    .skills-soft__list-wrapper {
+        justify-content: start;
+        gap: 20%;
+        flex-wrap: wrap;
+    }
 }
