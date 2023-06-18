@@ -275,6 +275,10 @@ body {
     padding-left: 20px;
 }
 
+.experiences__company-project-responsibilities li::marker {
+    color: var(--text-decoration-color);
+}
+
 .additional-info {
     flex: 1 1 40%;
 }
@@ -318,8 +322,8 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     background-color:var(--text-decoration-color);;
     border-radius: 50%;
     
